@@ -27,9 +27,9 @@
                     <h2 class="title">Enter your details here</h2>
                 </div>
                 <div class="card-body">
-                    <form method="POST">
+                    <form method="POST" action="connect.php">
                         <div class="form-row">
-                            <div class="name">User ID</div>
+                            <div class="name">User ID(CID)</div>
                             <div class="value">
                                 <div class="input-group">
                                     <input class="input--style-6" type="text" name="customer_ID">
@@ -37,40 +37,19 @@
                             </div>
                         </div>
                         <div class="form-row">
-                            <div class="name">First name</div>
-                            <div class="value">
-                                <input class="input--style-6" type="text" name="full_name" required>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="name">Middle Name</div>
-                            <div class="value">
-                                <div class="input-group">
-                                    <input class="input--style-6" type="text" name="middle_name">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="name">Last Name</div>
-                            <div class="value">
-                                <div class="input-group">
-                                    <input class="input--style-6" type="text" name="last_name">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-row">
                             <div class="name">Customer Type</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-6" type="text" name="" required>
+                                    <input class="input--style-6" type="text" name="Customer_type">
                                 </div>
                             </div>
                         </div>
+                        
                         <div class="form-row">
                             <div class="name">Street</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-6" type="text" name="" required>
+                                    <input class="input--style-6" type="text" name="street" required>
                                 </div>
                             </div>
                         </div>
@@ -78,7 +57,7 @@
                             <div class="name">City</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-6" type="text" name="" required>
+                                    <input class="input--style-6" type="text" name="city" required>
                                 </div>
                             </div>
                         </div>
@@ -86,7 +65,7 @@
                             <div class="name">ZIP Code</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-6" type="text" name="" required>
+                                    <input class="input--style-6" type="text" name="zip_code" required>
                                 </div>
                             </div>
                         </div>
@@ -94,7 +73,7 @@
                             <div class="name">State</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-6" type="text" name="" required>
+                                    <input class="input--style-6" type="text" name="state" required>
                                 </div>
                             </div>
                         </div>
@@ -102,15 +81,31 @@
                             <div class="name">Country</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-6" type="text" name="" required>
+                                    <input class="input--style-6" type="text" name="country" required>
                                 </div>
                             </div>
                         </div>
                         <div class="form-row">
-                            <div class="name">Phone Number</div>
+                            <div class="name">Email</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-6" type="text" name="" required>
+                                    <input class="input--style-6" type="email" name="email" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Country Code</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-6" type="email" name="country_code" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Number</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-6" type="email" name="number" required>
                                 </div>
                             </div>
                         </div>
@@ -118,7 +113,7 @@
                             <div class="name">Gender</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-6" type="text" name="" required>
+                                    <input class="input--style-6" type="text" name="gender" required>
                                 </div>
                             </div>
                         </div>
@@ -126,7 +121,55 @@
                             <div class="name">Nationality</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-6" type="text" name="" required>
+                                    <input class="input--style-6" type="text" name="nationality" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">EC First Name</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-6" type="text" name="ECFirstName" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">EC Middle Name</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-6" type="text" name="EC_Middle_Name">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">EC Last Name</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-6" type="text" name="EC_last_Name" >
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">EC Country Code</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-6" type="text" name="EC_Country_Code" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">EC Contact Number</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-6" type="text" name="EC_Contact_Number" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Passenger Count</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-6" type="text" name="Passenger_Count" required>
                                 </div>
                             </div>
                         </div>
@@ -134,15 +177,16 @@
                             <div class="name">Password</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-6" type="password" name="" required>
+                                    <input class="input--style-6" type="password" name="password" required>
                                 </div>
                             </div>
                         </div>
+                        <div class="card-footer">
+                            <button class="btn btn--radius-2 btn--blue-2" type="submit">Next</button>
+                        </div>
                     </form>
                 </div>
-                <div class="card-footer">
-                    <a href="/Users/vaishnavirajput/Desktop/Website/Login_page/index.html"<button class="btn btn--radius-2 btn--blue-2" type="submit">Next</button></a>
-                </div>
+                
             </div>
         </div>
     </div>
