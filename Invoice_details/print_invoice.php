@@ -6,7 +6,8 @@ $invoice->checkLoggedIn();
 if(!empty($_GET['invoice_id']) && $_GET['invoice_id']) {
 	echo $_GET['invoice_id'];
 	$invoiceValues = $invoice->getInvoice($_GET['invoice_id']);		
-	$invoiceItems = $invoice->getInvoiceItems($_GET['invoice_id']);		
+	$invoiceItems = $invoice->getInvoiceItems($_GET['invoice_id']);	
+		
 }
 $invoiceDate = date("d/M/Y, H:i:s", strtotime($invoiceValues['INVDATE']));
 $output = '';

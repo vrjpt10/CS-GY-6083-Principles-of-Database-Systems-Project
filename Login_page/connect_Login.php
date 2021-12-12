@@ -28,7 +28,7 @@ if (mysqli_num_rows($rs))
       header("Location: http://localhost/Website/Manager");
     }
     else{
-     header("Location: http://localhost/Website/Passenger_details");
+     header("Location: http://localhost/Website/Bookings");
     
     }
   }

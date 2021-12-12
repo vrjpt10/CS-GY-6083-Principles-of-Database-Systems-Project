@@ -9,19 +9,15 @@ $con = mysqli_connect('localhost', 'root', '','test');
  }else{
 	print("Connection Failed ");
  } 
-$PID=$_SESSION['PID'];
-print($PID);
+$CID=$_SESSION['cid'];
 $BOOKINGDATE=$_POST['BOOKINGDATE'];
-$MEALPLAN=$_POST['MEALPLAN'];
-$CABINCLASS=$_POST['CABINCLASS'];
-$SPCLRQST=$_POST['SPCLRQST'];
 $ArrAirport=$_POST['ArrAirport'];
 $ArrTime=$_POST['ArrTime'];
 $DepAirport=$_POST['DepAirport'];
 $DepTime=$_POST['DepTime'];
 
 
-$sql = "INSERT INTO JBVR_BookingDetails (  BOOKINGDATE  ,  MEALPLAN  ,  CABINCLASS  ,  SPCLRQST  ,  ArrAirport  ,  ArrTime  ,  DepAirport  ,  DepTime  ,  PID  ) VALUES ('$BOOKINGDATE', '$MEALPLAN', '$CABINCLASS', '$SPCLRQST', '$ArrAirport', '$ArrTime', '$DepAirport',' $DepTime', '$PID')";
+$sql = "INSERT INTO JBVR_BookingDetails (  BOOKINGDATE,  ArrAirport  ,  ArrTime  ,  DepAirport  ,  DepTime  ,  CID  ) VALUES ('$BOOKINGDATE', '$ArrAirport', '$ArrTime', '$DepAirport',' $DepTime', '$CID')";
 
 $rs = mysqli_query($con, $sql);
 
@@ -30,7 +26,7 @@ print ($rs);
 if($rs)
 {
 	echo "Contact Records Inserted";
-  header("Location: http://localhost/Website/Insurance_plans");
+  header("Location: http://localhost/Website/Add_Passenger");
   $_SESSION['BOOKINGID'] = mysqli_insert_id($con);
   
 }
