@@ -12,7 +12,10 @@ session_start();
 $username= $_POST['username'];
 $Password= $_POST['Password'];
 
-$sql = "SELECT * From Registration Where fldEmail='$username' and fldPassword='$Password'";
+$username1=mysqli_real_escape_string($con,$username);
+$Password1=mysqli_real_escape_string($con,$Password);
+
+$sql = "SELECT * From Registration Where fldEmail='$username1' and fldPassword='$Password1'";
 
 
 

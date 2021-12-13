@@ -24,44 +24,27 @@
         <div class="wrapper wrapper--w900">
             <div class="card card-6">
                 <div class="card-heading">
-                    <h2 class="title">Enter payment Details:</h2>
+                    <h2 class="title">Enter Invoice Details</h2>
                 </div>
                 <div class="card-body">
-                    <form method="POST" action="connect_Payment.php">
+                    <form method="POST" action="connect_Invoice.php">
                         <div class="form-row">
-                            <div class="name">Card Type </div>
+                            <div class="name">Invoice Date</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-6" type="text" name="CARDTYPE">
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="form-row">
-                            <div class="name">Card Number</div>
-                            <div class="value">
-                                <input class="input--style-6" type="text" name="CARDNUMBER" required>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="name">Name on card</div>
-                            <div class="value">
-                                <div class="input-group">
-                                    <input class="input--style-6" type="text" name="NAMECARD">
+                                    <input class="input--style-6" type="date" name="INVDATE">
                                 </div>
                             </div>
                         </div>
                         <div class="form-row">
-                            <div class="name">Expiry Date</div>
+                            <div class="name">Invoice Amount</div>
                             <div class="value">
-                                <div class="input-group">
-                                    <input class="input--style-6" type="date" name="EXPDATE">
-                                </div>
+                                <input class="input--style-6" type="text" name="INVAMT" required>
                             </div>
                         </div>
                         
                         <div class="card-footer">
-                            <button class="btn btn--radius-2 btn--blue-2" type="submit">Make Payment</button>
+                            <button class="btn btn--radius-2 btn--blue-2" type="submit">Next</button>
                         </div>
                     </form>
                 </div>

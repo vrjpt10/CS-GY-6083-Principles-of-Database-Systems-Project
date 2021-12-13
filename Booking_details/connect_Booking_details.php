@@ -16,8 +16,17 @@ $ArrTime=$_POST['ArrTime'];
 $DepAirport=$_POST['DepAirport'];
 $DepTime=$_POST['DepTime'];
 
+//Prevent SQL Sanization using real escape string
+$BOOKINGDATE1=mysqli_real_escape_string($con,$BOOKINGDATE);
+$ArrAirport1=mysqli_real_escape_string($con,$ArrAirport);
+$ArrTime1=mysqli_real_escape_string($con,$ArrTime);
+$DepAirport1 =mysqli_real_escape_string($con,  $DepAirport);
+$DepTime1=mysqli_real_escape_string($con, $DepTime);
 
-$sql = "INSERT INTO JBVR_BookingDetails (  BOOKINGDATE,  ArrAirport  ,  ArrTime  ,  DepAirport  ,  DepTime  ,  CID  ) VALUES ('$BOOKINGDATE', '$ArrAirport', '$ArrTime', '$DepAirport',' $DepTime', '$CID')";
+htmlspecialchars($ArrAirport1, ENT_QUOTES, 'UTF-8');
+htmlspecialchars($DepAirport1, ENT_QUOTES, 'UTF-8');
+
+$sql = "INSERT INTO JBVR_BookingDetails (  BOOKINGDATE,  ArrAirport  ,  ArrTime  ,  DepAirport  ,  DepTime  ,  CID  ) VALUES ('$BOOKINGDATE1', '$ArrAirport1', '$ArrTime1', '$DepAirport1',' $DepTime1', '$CID')";
 
 $rs = mysqli_query($con, $sql);
 

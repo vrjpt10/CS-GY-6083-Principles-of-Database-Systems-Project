@@ -43,7 +43,7 @@
                     if($result = mysqli_query($link, $sql)){
                         if(mysqli_num_rows($result) > 0){
                             echo '<div class="mt-5 mb-3 clearfix">';
-                        echo '<a href="http://localhost/Website/Invoice/index.html" class="btn btn-primary pull-right"> Proceed to payment</a>';
+                        echo '<a href="http://localhost/Website/Invoice/index.php" class="btn btn-primary pull-right"> Proceed to payment</a>';
                         echo '</div>';
                             echo '<table class="table table-bordered table-striped">';
                                 echo "<thead>";
@@ -77,7 +77,7 @@
                             // Free result set
                             mysqli_free_result($result);
                         } else{
-                            echo '<div class="alert alert-danger"><em>No records were found.</em></div>';
+                            echo '<div class="alert alert-danger"><em>No passenger records were found.</em></div>';
                         }
                     } else{
                         echo "Oops! Something went wrong. Please try again later.";

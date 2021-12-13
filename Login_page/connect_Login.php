@@ -12,7 +12,17 @@ session_start();
 $username= $_POST['username'];
 $Password= $_POST['Password'];
 
+$username=mysqli_real_escape_string($con,$username);
+//$Password1=mysqli_real_escape_string($con,$Password);
+
+htmlspecialchars($username, ENT_QUOTES, 'UTF-8');
+//htmlspecialchars($Password1, ENT_QUOTES, 'UTF-8');
+
+// $hash = password_hash($Password, PASSWORD_DEFAULT);
+
+//print ($hash);
 $sql = "SELECT * From Registration Where fldEmail='$username' and fldPassword='$Password'";
+
 
 
 
@@ -23,6 +33,7 @@ if (mysqli_num_rows($rs))
   while($rows=mysqli_fetch_assoc($rs)){
     print($rows['fldCID']);
     $_SESSION['cid'] = $rows['fldCID'];
+    
     if ($rows['role']==1)
     {
       header("Location: http://localhost/Website/Manager");
