@@ -73,7 +73,7 @@ print($EC_Contact_Number );
 
 
 //print ($hash);
-$sql = "INSERT INTO Registration (fldCType, fldCstreet, fldCity, fldZip, fldState, fldCountry, fldEmail, fldCountryCode, fldNumber, fldGender, fldNationality, fldECFirstName, fldECMiddleName, fldECLastName, fldECCountryCode, fldECNumber,  fldPassword) VALUES ('$Customer_type', '$street', '$city','$zip_code', '$state', '$country', '$email','$country_code','$number', '$gender', '$nationality','$ECFirstName', '$EC_Middle_Name',  '$EC_Last_Name', '$EC_Country_Code', '$EC_Contact_Number' ,'$hash')";
+$sql = "INSERT INTO Registration (fldCType, fldCstreet, fldCity, fldZip, fldState, fldCountry, fldEmail, fldCountryCode, fldNumber, fldGender, fldNationality, fldECFirstName, fldECMiddleName, fldECLastName, fldECCountryCode, fldECNumber,  fldPassword) VALUES ('$Customer_type', '$street', '$city','$zip_code', '$state', '$country', '$email','$country_code','$number', '$gender', '$nationality','$ECFirstName', '$EC_Middle_Name',  '$EC_Last_Name', '$EC_Country_Code', '$EC_Contact_Number' ,'$password')";
 
 if ($result = mysqli_query($con, "SELECT * FROM Registration")) {
     printf("Select returned %d rows.\n", mysqli_num_rows($result));

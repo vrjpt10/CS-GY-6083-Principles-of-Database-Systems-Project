@@ -40,10 +40,11 @@
                     session_start();
                     // Attempt select query execution
                     $sql = "SELECT pas.pid as PID, pas.pfname as pfname, ins.IPNAME as ipname, ins.IPCOST as ipcost, book.arrairport as arrairport, book.depairport as depairport FROM JBVR_Passenger pas JOIN JBVR_BookingDetails book ON pas.BOOKINGID = book.BOOKINGID JOIN Registration reg ON book.CID = reg.fldCID JOIN JBVR_InsurancePlans ins ON ins.InsID = pas.INSID Where reg.fldCID = '".$_SESSION['cid']."' and book.BOOKINGID = '".$_SESSION['BOOKINGID']."'";
+                    //$sql= "SELECT pas.PFNAME as First_Name, pas.PMNAME as Middle_Name, pas.PLNAME as Last_Name, book.ArrAirport as Arrival_Airport, book.DepAirport as Departure_Airport, ins.IPNAME as Insurance_Plan, ins.IPCOST as Cost FROM JBVR_Passenger pas JOIN JBVR_BookingDetails book ON pas.BOOKINGID=book.BOOKINGID JOIN JBVR_InsurancePlans ins ON pas.INSID=ins.InsID JOIN Registration reg on book.CID=reg.fldCID WHERE (pas.BOOKINGID=book.BOOKINGID) and reg.fldCID = '".$_SESSION['cid']."' and book.BOOKINGID = '".$_SESSION['BOOKINGID']."'";
                     if($result = mysqli_query($link, $sql)){
                         if(mysqli_num_rows($result) > 0){
                             echo '<div class="mt-5 mb-3 clearfix">';
-                        echo '<a href="http://localhost/Website/Invoice/index.php" class="btn btn-primary pull-right"> Proceed to payment</a>';
+                        echo '<a href="http://localhost/Website/Invoice/connect_Invoice.php" class="btn btn-primary pull-right"> Proceed to payment</a>';
                         echo '</div>';
                             echo '<table class="table table-bordered table-striped">';
                                 echo "<thead>";

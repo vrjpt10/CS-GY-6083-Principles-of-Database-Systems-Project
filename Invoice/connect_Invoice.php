@@ -19,7 +19,7 @@ if($result = mysqli_query($con, $sql_query)){
   if(mysqli_num_rows($result) > 0){
     while($row = mysqli_fetch_array($result)){
       $sql = "INSERT INTO JBVR_Invoice (INVDATE, INVAMT, CID, BOOKINGID) VALUES ('$date', '".$row['INVAMT']."','$CID', '$BID')";
-
+      $_SESSION['INVAMT']=$row['INVAMT'];
   
 $rs = mysqli_query($con, $sql);
 
@@ -30,6 +30,7 @@ if($rs)
 	echo "Contact Records Inserted";
   header("Location: http://localhost/Website/Payment_details");
   $_SESSION['INVID']=mysqli_insert_id($con);
+  
 }
 
     }

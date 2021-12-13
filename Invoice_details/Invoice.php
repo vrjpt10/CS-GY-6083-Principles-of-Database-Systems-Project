@@ -83,6 +83,7 @@ class Invoice{
 		$sqlQuery = "
 			SELECT * FROM ".$this-> invoice." 
 			WHERE  CID = '".$_SESSION['cid']."' ORDER BY INVID DESC";
+
 		return  $this->getData($sqlQuery);
 	}	
 	public function getInvoice($invoiceId){
@@ -94,7 +95,7 @@ class Invoice{
 		return $row;
 	}	
 	public function getInvoiceItems($invoiceId){
-		$sql = "Select * from JBVR_InsurancePlans as ins JOIN JBVR_Passenger as pas ON pas.PID = ins.PID where pas.PID = '".$_SESSION['PID']."'";
+		$sql = "Select pas.pfname as PFNAME, pas.plname as PLNAME, book.ArrAirport as ArrAirport, book.DepAirport as DepAirport, insurance.IPNAME as IPNAME, insurance.IPCOST as IPCOST From JBVR_Passenger pas JOIN JBVR_BookingDetails book ON pas.BOOKINGID=book.BOOKINGID JOIN JBVR_InsurancePlans insurance ON insurance.InsID=pas.INSID JOIN JBVR_Invoice invoice ON invoice.BOOKINGID = book.BOOKINGID where invoice.INVID='".$invoiceId."'";
 		return  $this->getData($sql);	
 	}
 	public function deleteInvoiceItems($invoiceId){

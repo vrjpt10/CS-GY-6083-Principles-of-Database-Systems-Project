@@ -9,6 +9,7 @@ if(!empty($_GET['invoice_id']) && $_GET['invoice_id']) {
 	$invoiceItems = $invoice->getInvoiceItems($_GET['invoice_id']);	
 		
 }
+
 $invoiceDate = date("d/M/Y, H:i:s", strtotime($invoiceValues['INVDATE']));
 $output = '';
 $output .= '<table width="100%" border="1" cellpadding="5" cellspacing="0">
@@ -34,10 +35,13 @@ $output .= '<table width="100%" border="1" cellpadding="5" cellspacing="0">
 	<table width="100%" border="1" cellpadding="5" cellspacing="0">
 	<tr>
 	<th align="left">Sr No.</th>
-	<th align="left">Insurance Type</th>
-	<th align="left">Passenger Name</th>
-	<th align="left">Insurance Plan Name</th>
-	<th align="left">Cost</th>
+	<th align="left">First Name</th>
+	<th align="left">Last Name</th>
+	<th align="left">Arrival Airport</th>
+	<th align="left">Departure Airport</th>
+	<th align="left">Insurance Name</th>
+	<th align="left">Insurance Cost</th>
+	
 	</tr>';
 $count = 0;   
 foreach($invoiceItems as $invoiceItem){
@@ -45,15 +49,17 @@ foreach($invoiceItems as $invoiceItem){
 	$output .= '
 	<tr>
 	<td align="left">'.$count.'</td>
-	<td align="left">'.$invoiceItem['INSURANCETYPE'].'</td>
 	<td align="left">'.$invoiceItem['PFNAME'].'</td>
+	<td align="left">'.$invoiceItem['PLNAME'].'</td>
+	<td align="left">'.$invoiceItem['ArrAirport'].'</td>
+	<td align="left">'.$invoiceItem['DepAirport'].'</td>
 	<td align="left">'.$invoiceItem['IPNAME'].'</td>
 	<td align="left">'.$invoiceItem['IPCOST'].'</td> 
 	</tr>';
 }
 $output .= '
 	<tr>
-	<td align="right" colspan="5"><b>Amount:</b></td>
+	<td align="right" colspan="6"><b>Amount:</b></td>
 	<td align="left">'.$invoiceValues['INVAMT'].'</td>
 	</tr>';
 $output .= '
