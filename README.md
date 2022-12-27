@@ -8,4 +8,4 @@ Safe Fly Management Excellence (SAME) is a startup company expanding its busines
 
 #### About the project
 
-In this project, we created a web based user interface and a relational database management system for Safe Fly Management Excellence. For more details please review the ProjectReport.pdf
+In this project, we created a locally hosted web based user interface and a relational database management system for Safe Fly Management Excellence. For more details please review the ProjectReport.pdf
